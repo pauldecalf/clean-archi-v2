@@ -1,6 +1,6 @@
 import { NewUser, users } from "@/database/schema";
 import { UserConnectedType, UserSignInType, UserType } from "../entities/user";
-import { IUserRepository } from "../repositories/user.repository.interface";
+import { IUserRepository } from "../repository/user.repository.interface";
 import { db } from "@/database/db";
 import { eq } from "drizzle-orm";
 
