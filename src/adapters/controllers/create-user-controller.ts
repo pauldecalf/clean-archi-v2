@@ -7,7 +7,7 @@ import {createUserValidation} from "@/src/adapters/validations/create-user-valid
 export class CreateUserController {
     private createNewUserUseCase: CreateNewUserUseCase;
 
-    constructor() {
+    constructor() { 
         const userRepository = new UserRepository();
         this.createNewUserUseCase = new CreateNewUserUseCase(userRepository);
     }
@@ -28,7 +28,7 @@ export class CreateUserController {
             if (!validatePayload.success) {
                 return {
                     success: false,
-                    error: "invalid payload",
+                    error: validatePayload.error.issues[0].message,
                 }
             }
 
